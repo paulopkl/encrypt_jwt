@@ -4,4 +4,4 @@ APP_DB=test_schema
 APP_USER=root
 APP_PASSWORD=
 
-APP_SECRET=segredogigantesco123456912shda@!#$@#@#$%FDDSSAS
+APP_SECRET={Your KEY Secret]

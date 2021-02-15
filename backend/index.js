@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const jwt = require('jwt-simple');
+require('dotenv').config();
 const config = require('./knexfile.js');
 const knex = require('knex');
 const db = knex(config);
@@ -53,7 +54,7 @@ app.post('/login', async (req, res, next) => {
             exp: now + (3 * (24 * (60 * 60)))
         }
             
-        const authSecret = "segredogigantesco123456912shda@!#$@#@#$%FDDSSAS";
+        const authSecret = process.env.APP_SECRET;
 
         const logIn = { ...payload, token: jwt.encode(payload, authSecret) }
 

@@ -1,13 +1,16 @@
 // Update with your config settings.
+require('dotenv').config();
 
 module.exports = {
 
   // development: {
     client: 'mysql',
     connection: {
-      database: 'test_schema',
-      user:     'root',
-      password: ''
+      host: process.env.APP_HOST || 'localhost',
+      port: process.env.APP_PORT || 3306,
+      database: process.env.APP_DB || 'test_schema',
+      user:     process.env.APP_USER || 'root',
+      password: process.env.APP_PASSWORD || ''
     },
     pool: {
       min: 2,
